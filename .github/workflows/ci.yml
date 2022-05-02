@@ -36,15 +36,6 @@ jobs:
         with:
           version: latest
 
-      - name: Docker buildx build
-        if: github.ref != 'refs/heads/main'
-        run: |
-          docker buildx build \
-          --platform ${DOCKER_TARGET_PLATFORM} \
-          --tag ${DOCKER_IMAGE}:${{ steps.vars.outputs.sha_short }} \
-          --file ./Dockerfile \
-          --load .
-
       - name: Docker buildx build and push
         if: github.ref == 'refs/heads/main'
         run: |
