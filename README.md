@@ -1,11 +1,12 @@
 This is a Ikev2 server with radius authentication (Jumpcloud by default)
 
 # Build
-docker build -t ikev  .
+
+    docker build -t ikev  .
 
 # RUN
 
-docker run --rm -d --name=ikev --cap-add=NET_ADMIN -p 500:500/udp -p 4500:4500/udp j0rsa/radius-ikev2
+    docker run --rm -d --name=ikev --cap-add=NET_ADMIN -p 500:500/udp -p 4500:4500/udp j0rsa/radius-ikev2
 
 # Recommended Prod RUN
 
