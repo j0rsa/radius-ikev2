@@ -21,9 +21,9 @@ RUN wget https://download.strongswan.org/strongswan-$STRONGSWAN_VERSION.tar.bz2 
 		--enable-eap-radius \
 		--enable-eap-ttls \
 		--enable-eap-peap \
-		--enable-eap-dynamic > /dev/null 2>&1 \
-&& make -j > /dev/null 2>&1 \
-&& make install > /dev/null 2>&1 \
+		--enable-eap-dynamic \
+&& make -j  \
+&& make install \
 && cd - && rm -rf strongswan-*
 
 EXPOSE 500/udp
